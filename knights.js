@@ -2,7 +2,7 @@
 
 const knight = (s, f) => {
   let min = 6
-  min = 2
+
   // convert start and finish to coordinates
   const start = s.split('')
   const finish = f.split('')
@@ -26,29 +26,53 @@ const knight = (s, f) => {
   start[1] = Number(start[1])
   finish[1] = Number(finish[1])
 
-  const move = (direction, position) => {
-    switch (direction) {
-      case 'NNW':
-        return [position[0] + 3, position[1] - 2]
-      case 'NWW':
-        return [position[0] + 2, position[1] - 3]
-      case 'SSW':
-        return [position[0] - 3, position[1] - 2]
-      case 'SWW':
-        return [position[0] - 2, position[1] - 3]
-      case 'NNE':
-        return [position[0] + 3, position[1] + 2]
-      case 'NEE':
-        return [position[0] + 2, position[1] + 3]
-      case 'SSE':
-        return [position[0] - 3, position[1] + 2]
-      case 'SEE':
-        return [position[0] - 2, position[1] + 3]
+  const move = (position, type) => {
+    switch (type) {
+      case 0:
+        return [position[0] + 2, position[1] - 1]
+      case 1:
+        return [position[0] + 1, position[1] - 2]
+      case 2:
+        return [position[0] - 2, position[1] - 1]
+      case 3:
+        return [position[0] - 1, position[1] - 2]
+      case 4:
+        return [position[0] + 2, position[1] + 1]
+      case 5:
+        return [position[0] + 1, position[1] + 2]
+      case 6:
+        return [position[0] - 2, position[1] + 1]
+      case 7:
+        return [position[0] - 1, position[1] + 2]
     }
   }
 
-  console.log(start, finish, move('NNW', start))
   // recursively check for paths while recording the shortest so far
+  const tryMoves = (position, moveType, moveCount) => {
+    const newPosition = move(position, moveType)
+    if (newPosition[0] <= 0 || newPosition[1] <= 0) {
+      return null
+    } else {
+      const newMoveCount = moveCount + 1
+      if (newMoveCount <= min) {
+        if (newPosition[0] === finish[0] && newPosition[1] === finish[1]) {
+          min = newMoveCount
+          return null
+        } else {
+          for (let i = 0; i < 8; i++) {
+            tryMoves(newPosition, i, newMoveCount)
+          }
+        }
+      } else {
+        return null
+      }
+    }
+  }
+
+  for (let i = 0; i < 8; i++) {
+    tryMoves(start, i, 0)
+  }
+
   return min
 }
 
