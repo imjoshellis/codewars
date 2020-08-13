@@ -1,18 +1,23 @@
 function longestSlideDown (pyramid) {
   let ret = 0
-  const test = [
-    [0, 0, 0, 0],
-    [0, 0, 0, 1],
-    [0, 0, 1, 1],
-    [0, 0, 1, 2],
-    [0, 1, 1, 1],
-    [0, 1, 1, 2],
-    [0, 1, 2, 2],
-    [0, 1, 2, 3]
-  ]
+  const test = []
+  const generateTest = (n, s = '0') => {
+    if (n > 1) {
+      generateTest(n - 1, s + '0')
+      generateTest(n - 1, s + '1')
+    } else {
+      test.push(s.split('').map((n) => parseInt(n)))
+    }
+  }
+
+  generateTest(pyramid.length)
+  console.log(test)
+
   for (const i in test) {
+    let prevIdx = 0
     const reduced = pyramid.reduce((prev, curr, idx) => {
-      return parseInt(prev) + parseInt(curr[test[i][idx]])
+      prevIdx = prevIdx + test[i][idx]
+      return parseInt(prev) + parseInt(curr[prevIdx])
     })
     ret = reduced > ret ? reduced : ret
   }
@@ -21,7 +26,7 @@ function longestSlideDown (pyramid) {
 }
 
 console.log(longestSlideDown([[3], [7, 4], [2, 4, 6], [8, 5, 9, 3]]), 'expected: 23')
-/* console.log(
+console.log(
   longestSlideDown([
     [75],
     [95, 64],
@@ -41,4 +46,3 @@ console.log(longestSlideDown([[3], [7, 4], [2, 4, 6], [8, 5, 9, 3]]), 'expected:
   ]),
   'expected: 1074'
 )
-*/
