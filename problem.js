@@ -1,10 +1,10 @@
 function permutations (str) {
   const o = {}
   const arr = []
+
   str.split('').map((c) => (o[c] ? (o[c] += 1) : (o[c] = 1)))
 
   const recursion = (obj, s = '') => {
-    console.log(obj, s)
     if (Object.values(obj).filter((v) => v !== 0).length === 0) {
       arr.push(s)
       return null
