@@ -2,7 +2,7 @@ function determinant (m) {
   let d = 0
   console.log(m)
   if (m.length === 1) {
-    return m
+    return m[0][0]
   } else {
     for (let n in m[0]) {
       n = parseInt(n)
