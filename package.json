@@ -8,8 +8,8 @@
   "type": "module",
   "scripts": {
     "test": "jest --watch",
-    "new": "node scripts/new.js",
-    "done": "node scripts/done.js"
+    "start": "node scripts/new.js",
+    "build": "mv working/*.test.ts solved/__test__ && mv working/*.ts solved"
   },
   "dependencies": {
     "@types/jest": "^26.0.15",

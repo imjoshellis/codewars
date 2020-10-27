@@ -2,24 +2,37 @@ import fs from 'fs'
 import inquire from 'inquirer'
 
 const Main = async () => {
-  let name
-  await inquire
-    .prompt([
+  let url = process.argv[2]
+  if (!url) {
+    const { input } = await inquire.prompt([
       {
         type: 'input',
-        name: 'name',
-        message: 'name: '
+        name: 'input',
+        message: 'url: '
       }
     ])
-    .then(ans => {
-      name = ans.name
+    url = input
+  }
+
+  const name = url
+    .split('/')
+    .filter(w => !!w)
+    .reverse()[0]
+    .split('-')
+    .map((w, i) => {
+      const word = [...w]
+      word[0] = i === 0 ? word[0] : word[0].toUpperCase()
+      return word.join('')
     })
+    .slice(0, 3)
+    .join('')
 
   const filename = `working/${name}`
 
   fs.writeFile(
     `${filename}.ts`,
-    `export const ${name} = (arg: string) => {
+    `// ${url}
+    export const ${name} = (arg: string) => {
       return arg
     }`,
     err => {
