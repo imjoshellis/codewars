@@ -5,11 +5,15 @@
   "repository": "https://github.com/imjoshellis/codewars.git",
   "author": "Josh Ellis <josh@imjoshellis.com>",
   "license": "MIT",
+  "type": "module",
   "scripts": {
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "new": "node scripts/new.js",
+    "done": "node scripts/done.js"
   },
   "dependencies": {
     "@types/jest": "^26.0.15",
+    "inquirer": "^7.3.3",
     "jest": "^26.6.1",
     "ts-jest": "^26.4.2",
     "typescript": "^4.0.3"

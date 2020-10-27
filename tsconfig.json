@@ -23,10 +23,5 @@
     "baseUrl": "."
   },
   "exclude": ["node_modules"],
-  "include": [
-    "./src/**/*.tsx",
-    "./src/**/*.ts",
-    "solved/longestCommonPrefix.ts",
-    "solved/__test__/longestCommonPrefix.test.ts"
-  ]
+  "include": ["./**/*.ts"]
 }
