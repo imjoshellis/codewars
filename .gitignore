@@ -1,2 +1,4 @@
 node_modules
 working
+.metals/metals.lock.db
+.metals/metals.h2.db
