@@ -7,7 +7,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "test": "jest --watch",
+    "test": "jest --watchAll",
     "start": "node scripts/new.js",
     "build": "mv working/*.test.ts solved/__test__ && mv working/*.ts solved && git add . && git commit -am 'Solved' && git push"
   },
