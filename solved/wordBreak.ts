@@ -2,6 +2,7 @@
 const wordBreak = (s: string, wordDict: string[]): boolean => {
   const dict = new Set(wordDict)
   const visited = new Set()
+  visited.
   const q = [0]
 
   while (q.length) {
