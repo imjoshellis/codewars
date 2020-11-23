@@ -45,7 +45,7 @@ const Main = async () => {
     export { ${name} }`,
     err => {
       if (err) throw err
-      console.log('Saved!')
+      console.log(`💾️ Saved ${filename}.ts!`)
     }
   )
 
@@ -59,7 +59,7 @@ const Main = async () => {
     })`,
     err => {
       if (err) throw err
-      console.log('Saved!')
+      console.log(`💾️ Saved! ${filename}.test.ts`)
     }
   )
 }
