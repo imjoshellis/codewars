@@ -1,13 +1,6 @@
-// https://leetcode.com/problems/add-two-numbers/
-export class ListNode {
-  val: number
-  next: ListNode | null
-  constructor (val?: number, next?: ListNode | null) {
-    this.val = val === undefined ? 0 : val
-    this.next = next === undefined ? null : next
-  }
-}
+import { ListNode } from '../lib/ListNode'
 
+// https://leetcode.com/problems/add-two-numbers/
 export const addTwoNumbers = (
   l1: ListNode | null,
   l2: ListNode | null,

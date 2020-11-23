@@ -1,12 +1,5 @@
 // https://leetcode.com/explore/learn/card/linked-list/214/two-pointer-technique/1212/
-class ListNode {
-  val: number
-  next: ListNode | null
-  constructor (val?: number, next?: ListNode | null) {
-    this.val = val === undefined ? 0 : val
-    this.next = next === undefined ? null : next
-  }
-}
+import { ListNode } from '../lib/ListNode'
 
 const hasCycle = (head: ListNode | null): boolean => {
   if (!head) return false

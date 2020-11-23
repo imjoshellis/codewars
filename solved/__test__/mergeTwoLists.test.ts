@@ -1,4 +1,5 @@
-import { ListNode, mergeTwoLists } from '../mergeTwoLists'
+import { ListNode } from '../../lib/ListNode'
+import { mergeTwoLists } from '../mergeTwoLists'
 
 it('returns null for null inputs', () => {
   expect(mergeTwoLists(null, null)).toBe(null)

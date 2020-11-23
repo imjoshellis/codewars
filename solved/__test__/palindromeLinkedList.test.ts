@@ -1,4 +1,5 @@
-import { ListNode, palindromeLinkedList } from './palindromeLinkedList'
+import { ListNode } from '../../lib/ListNode'
+import { palindromeLinkedList } from '../palindromeLinkedList'
 
 it('accepts a node and returns boolean', () => {
   const test = new ListNode()

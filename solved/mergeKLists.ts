@@ -1,13 +1,6 @@
-// https://leetcode.com/problems/merge-k-sorted-lists/
-export class ListNode {
-  val: number
-  next: ListNode | null
-  constructor (val?: number, next?: ListNode | null) {
-    this.val = val === undefined ? 0 : val
-    this.next = next === undefined ? null : next
-  }
-}
+import { ListNode } from '../lib/ListNode'
 
+// https://leetcode.com/problems/merge-k-sorted-lists/
 export const mergeKLists = (lists: Array<ListNode | null>): ListNode | null =>
   lists
     .map(listToArray([]))
