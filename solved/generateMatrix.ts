@@ -1,8 +1,6 @@
 // amazon-interview-mock
 const generateMatrix = (n: number): number[][] => {
-  if (!n) {
-    return []
-  }
+  if (!n) return []
   let startRow = 0
   let endRow = n - 1
   let startColumn = 0
