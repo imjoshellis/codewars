@@ -1,14 +1,4 @@
-export const singleNumber = (nums: number[]): number => {
-  if (nums.length === 1) return nums[0]
-  const map = new Map()
+// https://leetcode.com/explore/featured/card/top-interview-questions-easy/92/array/549/
+const singleNumber = (nums: number[]): number => nums.reduce((a, c) => a ^ c, 0)
 
-  for (let el of nums) {
-    if (map.has(el)) {
-      map.delete(el)
-    } else {
-      map.set(el, true)
-    }
-  }
-
-  return map.keys().next().value
-}
+export { singleNumber }
