@@ -9,7 +9,8 @@
   "scripts": {
     "test": "jest --watchAll",
     "start": "node scripts/new.js",
-    "build": "mv working/*.test.ts solved/__test__ ; mv working/*.* solved && git add . && git commit -am 'Solved' && git push"
+    "start:go": "node scripts/newGo.js",
+    "build": "mv working/*test* solved/__test__ ; mv working/*.* solved && git add . && git commit -am 'Solved' && git push"
   },
   "dependencies": {
     "@types/jest": "^26.0.15",
