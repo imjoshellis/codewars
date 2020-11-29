@@ -1,0 +1,4 @@
+package algos
+    
+    func TestFirstUniqChar() {
+    }
