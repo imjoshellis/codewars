@@ -1,16 +1,16 @@
-export const longestCommonPrefix = (strs: string[]): string => {
-  if (strs.length === 0) return ''
+export const longestCommonPrefix = (arr: string[]): string => {
+  let res = ''
+  let cur = ''
 
-  const arr = [] as string[]
-  let letter = ''
+  if (arr.length === 0) return res
 
-  while (true) {
-    letter = strs[0][arr.length]
-    for (let str of strs) {
-      if (str === '') return ''
-      if (str[arr.length] !== letter) return arr.join('')
+  for (let i = 0; i < arr[0].length; i++) {
+    cur = arr[0][i]
+    for (const s of arr) {
+      if (s[i] !== cur) return res
     }
-    arr.push(strs[0][arr.length])
-    if (arr.length === strs[0].length) return arr.join('')
+    res += cur
   }
+
+  return res
 }

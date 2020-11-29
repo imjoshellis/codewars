@@ -7,7 +7,10 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "test": "jest --watchAll",
+    "test:ts": "jest --watchAll",
+    "test:go": "go test ./working",
+    "test": "yarn run test:go",
+    "run": "go run ./working",
     "start": "node scripts/new.js",
     "start:go": "node scripts/newGo.js",
     "build": "mv working/*test* solved/__test__ ; mv working/*.* solved && git add . && git commit -am 'Solved' && git push"

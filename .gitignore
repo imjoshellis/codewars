@@ -1,3 +1,4 @@
 node_modules
 .metals/metals.lock.db
 .metals/metals.h2.db
+vendor/

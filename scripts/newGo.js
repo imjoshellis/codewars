@@ -44,9 +44,7 @@ const Main = async () => {
     // ${url}
     package main
     
-    import (
-      log "github.com/sirupsen/logrus"
-    )
+    // import log "github.com/sirupsen/logrus"
     
     func ${name}() {
     }
@@ -68,9 +66,9 @@ const Main = async () => {
       exp := []string{"1"}
       args := []int{1}
       for i, arg := range args {
-        res := countAndSay(arg)
+        res := ${name}(arg)
         if res != exp[i] {
-          t.Fatalf("Expected %v, got %v", exp, res)
+          t.Fatalf("Expected %v, got %v with %v arg", exp[i], res, arg)
         }
       }
     }`,
