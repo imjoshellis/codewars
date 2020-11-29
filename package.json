@@ -13,6 +13,7 @@
     "run": "go run ./working",
     "start": "node scripts/new.js",
     "start:go": "node scripts/newGo.js",
+    "start:co": "git add . && git commit -am 'Started' && git push",
     "build": "mv working/*test* solved/__test__ ; mv working/*.* solved && git add . && git commit -am 'Solved' && git push"
   },
   "dependencies": {
