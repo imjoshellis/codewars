@@ -50,7 +50,7 @@ const Main = async () => {
     }
     
     func main() {
-      log.Info(${name}())
+      // log.Info(${name}())
     }`,
     err => {
       if (err) throw err
