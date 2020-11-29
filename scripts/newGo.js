@@ -40,11 +40,19 @@ const Main = async () => {
 
   fs.writeFile(
     `${filename}.go`,
-    `// Package algos has solved algorithms
+    `// Package main has solved algorithms
     // ${url}
-    package algos
-
+    package main
+    
+    import (
+      log "github.com/sirupsen/logrus"
+    )
+    
     func ${name}() {
+    }
+    
+    func main() {
+      log.Info(${name}())
     }`,
     err => {
       if (err) throw err
@@ -54,9 +62,17 @@ const Main = async () => {
 
   fs.writeFile(
     `${filename}_test.go`,
-    `package algos
+    `package main
     
-    func Test${capitalizedName}() {
+    func Test${capitalizedName}(t *testing.T) {
+      exp := []string{"1"}
+      args := []int{1}
+      for i, arg := range args {
+        res := countAndSay(arg)
+        if res != exp[i] {
+          t.Fatalf("Expected %v, got %v", exp, res)
+        }
+      }
     }`,
     err => {
       if (err) throw err
