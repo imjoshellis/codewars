@@ -40,7 +40,11 @@ func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 		node = node.Next
 	}
 
-	node.Next = l1 || l2
+	if l1 != nil {
+		node.Next = l1
+	} else {
+		node.Next = l2
+	}
 
 	return head
 }
