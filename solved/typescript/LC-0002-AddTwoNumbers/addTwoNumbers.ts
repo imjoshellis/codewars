@@ -1,7 +1,8 @@
-import { ListNode } from '../lib/types/ListNode'
+import { ListNode } from '../../../lib/types/ListNode'
 
 // https://leetcode.com/problems/add-two-numbers/
-export const addTwoNumbers = (
+
+const addTwoNumbers = (
   l1: ListNode | null,
   l2: ListNode | null,
   carry: number = 0
@@ -13,9 +14,8 @@ export const addTwoNumbers = (
   const l2val = l2?.val || 0
   const sum = l1val + l2val + carry
   const rem = sum % 10
-  const nextCarry = sum > 9 ? Math.floor(sum / 10) : 0
-  return new ListNode(
-    rem,
-    addTwoNumbers(l1?.next || null, l2?.next || null, nextCarry)
-  )
+  carry = sum > 9 ? 1 : 0
+  return new ListNode(rem, addTwoNumbers(l1?.next, l2?.next, carry))
 }
+
+export { addTwoNumbers, ListNode }
