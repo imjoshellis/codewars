@@ -1,6 +1,6 @@
 # Add Two Numbers (LC-0002)
 
-View the problem explanation on LeetCode: <https://leetcode.com/problems/add-two-numbers/>
+🛑️ This won't make any sense unless you're familiar with the problem explanation on LeetCode: <https://leetcode.com/problems/add-two-numbers/>
 
 ## Simple Case
 
