@@ -108,6 +108,8 @@ if (!l2 && carry === 0) return l1
 
 Here's the final solution. On a good run, it's faster than ~98% of other TypeScript submissions.
 
+To further optimize, we'd have to switch to an iterative method using a loop instead of recursion.
+
 ```ts
 const addTwoNumbers = (
   l1: ListNode | null,
