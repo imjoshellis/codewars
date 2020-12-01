@@ -44,14 +44,10 @@ const Main = async () => {
     // ${url}
     package main
     
-    // import log "github.com/sirupsen/logrus"
-    
     func ${name}() {
     }
     
-    func main() {
-      // log.Info(${name}())
-    }`,
+    func main() {}`,
     err => {
       if (err) throw err
       console.log(`💾️ Saved! ${filename}.go`)
