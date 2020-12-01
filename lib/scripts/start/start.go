@@ -5,7 +5,6 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
-	"os/exec"
 	"path/filepath"
 	"strings"
 )
@@ -47,32 +46,20 @@ func visit(path string, fi os.FileInfo, err error) error {
 	return nil
 }
 
-func runcmd(cmd string, shell bool) []byte {
-	if shell {
-		out, err := exec.Command("bash", "-c", cmd).Output()
-		if err != nil {
-			log.Fatal(err)
-			panic("some error found")
-		}
-		return out
-	}
-	out, err := exec.Command(cmd).Output()
-	if err != nil {
-		log.Fatal(err)
-	}
-	return out
-}
-
 func main() {
 	if len(os.Args) < 3 {
 		log.Println("Not enough arguments. Must be called with:")
 		log.Fatal("start [language] [name] [optional:url]")
 	}
+	err := os.Mkdir("working", 0755)
+	if err != nil {
+		log.Fatal("Working already exists... Did you forget to finish?")
+	}
 	lang, name := os.Args[1], os.Args[2]
-	err := filepath.Walk("./templates/"+lang, visit)
+	err = filepath.Walk("./templates/"+lang, visit)
 	if err != nil {
 		panic(err)
 	}
 	cmd := fmt.Sprintf(`gaa && gcam "Started %v in %v"`, name, lang)
-	fmt.Println("👍 Want to commit? =>", cmd)
+	fmt.Println("🎉 Want to commit? =>", cmd)
 }

@@ -8,9 +8,10 @@
   "type": "module",
   "scripts": {
     "test": "jest ./working --watchAll",
-    "start": "./start",
+    "start": "./bin/start",
     "start:co": "git add . && git commit -am 'Started' && git push",
-    "build": "mv working/*test* solved/__test__ ; mv working/*.* solved && git add . && git commit -am 'Solved' && git push"
+    "build": "./bin/finish",
+    "build:co": "git add . && git commit -am 'Solved' && git push"
   },
   "dependencies": {
     "@types/jest": "^26.0.15",
