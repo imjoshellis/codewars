@@ -7,14 +7,11 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "test:ts": "jest --watchAll",
-    "test:go": "go test ./working",
-    "test": "yarn run test:go",
-    "run": "go run ./working",
-    "start": "node scripts/new.js",
-    "start:go": "node scripts/newGo.js",
+    "test": "jest ./working --watchAll",
+    "start": "./bin/start",
     "start:co": "git add . && git commit -am 'Started' && git push",
-    "build": "mv working/*test* solved/__test__ ; mv working/*.* solved && git add . && git commit -am 'Solved' && git push"
+    "build": "./bin/finish",
+    "build:co": "git add . && git commit -am 'Solved' && git push"
   },
   "dependencies": {
     "@types/jest": "^26.0.15",
