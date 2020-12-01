@@ -1,7 +1,6 @@
 # Add Two Numbers (LC-0002)
 
-URL: <https://leetcode.com/problems/add-two-numbers/>
----
+View the problem explanation on LeetCode: <https://leetcode.com/problems/add-two-numbers/>
 
 ## Simple Case
 
@@ -98,7 +97,7 @@ const addTwoNumbers = (
 
 ## Optimization
 
-What if one of the lists is significantly longer than the other? We would waste time traversing it! If one of the lists is empty. If a list is empty and carry is 0, we can simply return the other list:
+What if one of the lists is significantly longer than the other? We would waste time traversing it! If a list is empty and carry is 0, we can simply return the other list:
 
 ```ts
 if (!l1 && carry === 0) return l2
