@@ -34,7 +34,7 @@ func visit(path string, fi os.FileInfo, err error) error {
 		newContents = strings.Replace(newContents, "URLSTRING", url, -1)
 	}
 
-	newPath := strings.Replace(path, "templates/"+lang, "working", -1)
+	newPath := strings.Replace(path, "lib/templates/"+lang, "working", -1)
 	newPath = strings.Replace(newPath, "template", new, -1)
 	fmt.Println("💾️ New file created:", newPath)
 
@@ -56,7 +56,7 @@ func main() {
 		log.Fatal("Working already exists... Did you forget to finish?")
 	}
 	lang, name := os.Args[1], os.Args[2]
-	err = filepath.Walk("./templates/"+lang, visit)
+	err = filepath.Walk("./lib/templates/"+lang, visit)
 	if err != nil {
 		panic(err)
 	}
