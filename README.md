@@ -8,7 +8,7 @@ As I solve problems from LeetCode and other sources, I'll add them in the [solve
 
 Each solution will have a suite of tests and a readme file explaining the thought process and code.
 
-`12/1/2020 NOTE`: I just decided to restructure this repo and decided to add readmes to everything. Right now, there will be a lot of empty readmes in the solved folders.
+`12/1/2020 NOTE`: I just decided to restructure this repo and decided to add readmes to everything. Right now, there will be a lot of empty readmes in the solved folders. Any folder starting with LC-#### will have a comprehensive readme.
 
 ## Scripts
 
