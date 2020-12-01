@@ -73,6 +73,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	cmd := fmt.Sprintf(`git add ./working && git commit -ma "Started %v in %v"`, name, lang)
-	runcmd(cmd, true)
+	cmd := fmt.Sprintf(`git add ./working && git commit -m "Started %v in %v"`, name, lang)
+	fmt.Println(cmd)
+	// runcmd(cmd, true)
 }
