@@ -37,7 +37,7 @@ func visit(path string, fi os.FileInfo, err error) error {
 
 	newPath := strings.Replace(path, "templates/"+lang, "working", -1)
 	newPath = strings.Replace(newPath, "template", new, -1)
-	fmt.Println(newPath)
+	fmt.Println("💾️ New file created:", newPath)
 
 	err = ioutil.WriteFile(newPath, []byte(newContents), 0755)
 	if err != nil {
@@ -73,7 +73,6 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	cmd := fmt.Sprintf(`git add ./working && git commit -m "Started %v in %v"`, name, lang)
-	fmt.Println(cmd)
-	// runcmd(cmd, true)
+	cmd := fmt.Sprintf(`gaa && gcam "Started %v in %v"`, name, lang)
+	fmt.Println("👍 Want to commit? =>", cmd)
 }
