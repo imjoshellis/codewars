@@ -1,4 +1,4 @@
-# OpenLock
+# Open the Lock (LC 0725)
 
 🛑️ This won't make any sense unless you're familiar with the problem explanation on LeetCode: <https://leetcode.com/problems/open-the-lock/>
 
