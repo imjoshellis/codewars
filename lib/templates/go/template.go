@@ -3,6 +3,6 @@
 package template
 
 // Template is the primary function for the problem
-func Template(s string) (string, error) {
-	return s, nil
+func Template(s string) string {
+	return s
 }
